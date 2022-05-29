@@ -1,8 +1,5 @@
 FROM arm64v8/debian:bullseye-slim 
 
-LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
-
-LABEL org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -15,7 +12,7 @@ ENV USER=container HOME=/home/container
 
 ## Update base packages
 RUN apt update \
-			&& apt upgrade -y
+      && apt upgrade -y
 
 ## Install dependencies
 RUN apt install -y gcc g++ libgcc1 libc++-dev gdb libc6 git wget curl tar zip unzip binutils xz-utils liblzo2-2 cabextract iproute2 net-tools netcat telnet libatomic1 libsdl1.2debian libsdl2-2.0-0 \
