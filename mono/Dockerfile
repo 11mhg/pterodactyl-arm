@@ -4,8 +4,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
       && sh -c 'echo "deb https://download.mono-project.com/repo/debian stable-buster main" > /etc/apt/sources.list.d/mono-official-stable.list'
 
 RUN apt-get update -y \
- && apt-get install -y mono-complete \
- && useradd -d /home/container -m container
+ && apt-get install -y mono-complete
 
 USER container
 ENV USER=container HOME=/home/container
