@@ -1,9 +1,8 @@
-FROM python:buster 
+FROM ghcr.io/11mhg/pterodactyl_arm64:debian
 
-RUN useradd -ms /bin/bash container
 USER container
 ENV USER=container HOME=/home/container
 
 WORKDIR /home/container
 
-CMD ["/bin/bash" ]
+CMD ["/bin/bash", "/entrypoint.sh"]
